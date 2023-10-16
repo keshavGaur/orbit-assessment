@@ -1,0 +1,17 @@
+version: '3.7'
+#For Windows
+#docker-compose -f .\docker\docker-compose.test.yml up
+
+#For Mac
+#docker-compose -f docker/docker-compose.test.yml up
+services:
+  orbitshit-assessment-test:
+    image: orbitshit-assessment
+    build:
+      context: ..
+      dockerfile: ./docker/test/Dockerfile
+    environment:
+      NODE_ENV: test
+    command: node index.js complete
+    ports:
+      - 5000:5000

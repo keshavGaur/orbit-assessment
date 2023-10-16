@@ -1,0 +1,12 @@
+FROM node:14.19.1
+LABEL maintainer="Keshav"
+WORKDIR /usr/src/app
+COPY ["package.json", "npm-shrinkwrap.json*", "./"]
+RUN npm install
+COPY . .
+CMD ["npm", "start"]
+#For Windows
+#docker build -t orbitshit-assessment:1.0.0 -f .\docker\test\Dockerfile .
+
+#For Mac
+#docker build -t orbitshit-assessment:1.0.0 -f docker/test/Dockerfile .

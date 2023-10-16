@@ -1,10 +1,5 @@
+const pgConnection = require('./postgres-connection');
 
-const mssql = require('./mssql-connection');
-
-const dbs = {
-    mssql: {
-        getConnection: () => mssql.getConnection(),
-    },
-};
-
-module.exports = dbs;
+module.exports = {
+    pgConnection
+}

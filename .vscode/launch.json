@@ -5,96 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach to remote",
-            "address": "localhost",
-            "port": "9229",
-            "localRoot": "${workspaceFolder}",
-            "remoteRoot": "/usr/src/app/"
-        },
-        {
-            "type": "node",
+            "type": "pwa-node",
             "request": "launch",
-            "name": "Debug Local",
-            "program": "${workspaceFolder}/bin/www.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
             ],
-            "env": {
-                "NODE_ENV": "local-development",
-                "debug": "*"
-            },
-            "console": "integratedTerminal",
-        },
-        {
-            "name": "Debug Mocha Unit Tests",
-            "type": "node",
-            "request": "launch",
-            "address": "localhost",
-            "port": 9229,
-            "sourceMaps": false
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Debug Development",
-            "program": "${workspaceFolder}/bin/www.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "env": {
-                "NODE_ENV": "development",
-                "debug": "*"
-            },
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Debug Staging",
-            "program": "${workspaceFolder}/bin/www.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "env": {
-                "NODE_ENV": "staging",
-                "debug": "*"
-            },
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Debug Production",
-            "program": "${workspaceFolder}/bin/www.js",
-            "stopOnEntry": false,
+            "program": "${workspaceFolder}\\index.js",
             "args": [
-                "NODE_CONFIG=production"
-            ],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy",
-            ],
-            "env": {
-                "NODE_ENV": "production",
-                "debug": "*"
-            },
+                "complete"
+            ]
         }
     ]
 }
