@@ -1,7 +1,7 @@
 FROM node:14.19.1
 LABEL maintainer="Keshav"
 WORKDIR /usr/src/app
-COPY ["package.json", "npm-shrinkwrap.json*", "./"]
+COPY ["package.json", "./"]
 RUN npm install
 COPY . .
 CMD ["npm", "start"]
