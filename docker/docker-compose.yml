@@ -11,5 +11,5 @@ services:
       context: ..
       dockerfile: ./docker/test/Dockerfile
     environment:
-      NODE_ENV: test
+      NODE_ENV: production
     command: node index.js complete

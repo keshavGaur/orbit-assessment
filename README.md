@@ -22,4 +22,5 @@ FROM 'C:\<user>\assignment_job_titles.csv' CSV HEADER DELIMITER ',';
 1. npm start start
 
 ## Dockerize
+1. Make sure that DB allows connections from all ips(or docker ip)
 1. Run 
