@@ -106,11 +106,11 @@ const updateRecordStatus = async () => {
     try {
         sendHeartBeat();
         let isDataAvailable = true;
-        let inc = 0;
-        let resetRequired = false;
 
         while (isDataAvailable) {
-            const jobRawDataid = await getPaginatedData(inc);
+            // always getting only one document
+            // as we have condition to get on ones where is_valid is null
+            const jobRawDataid = await getPaginatedData(0);
 
             if (jobRawDataid) {
                 const distanceData = await getLevenshteinDistanceData(jobRawDataid);
@@ -119,18 +119,8 @@ const updateRecordStatus = async () => {
                     // process things
                     await markRecordsAsValidOrInvalid(distanceData);
                 }
-                inc += 1;
             } else {
-                // check if there rows with is_valid column as null
-                const remainingData = await getRemainingColumns();
-
-                if (remainingData === 0) {
-                    isDataAvailable = false;
-                } else {
-                    // resetting to default
-                    inc = 0;
-                }
-
+                isDataAvailable = false;
             }
         }
 
