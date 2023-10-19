@@ -109,6 +109,8 @@ const updateRecordStatus = async () => {
 
                 if (distanceData && distanceData.length) {
                     // process things
+                    // instead of keeping data in storage and marking at the end
+                    // marking while processing
                     await markRecordsAsValidOrInvalid(distanceData);
                 }
             } else {
