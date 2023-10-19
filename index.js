@@ -36,14 +36,6 @@ const sendHeartBeat = async () => {
     }, HEARTBEAT_UPDATE_MS);
 }
 
-const getRemainingColumns = async () => {
-    const client = await getClient();
-    const query = `SELECT COUNT(*) AS count FROM jobs_raw WHERE is_valid is null`;
-    const countData = await client.query(query);
-
-    return (parseInt(countData && countData.rows && countData.rows[0] && countData.rows[0].count)) || 0;
-}
-
 /**
  * returns next id according to offset
  * @param {Number} offset - records to be offset 
